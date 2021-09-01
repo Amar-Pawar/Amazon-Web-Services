@@ -17,17 +17,16 @@ def create_ec2_instance():
     MaxCount=1, # Keep the max count to 1, unless you have a requirement to increase it
     InstanceType="t2.micro", # Change it as per your need, But use the Free tier one
     KeyName="ec2-key" # Change it to the name of the key you have.
-    :return: Creates the EC2 instance.
     """
     try:
         logger.info("Creating EC2 instance")
         resource_ec2 = boto3.client("ec2")
         resource_ec2.run_instances(
-            ImageId="ami-00399ec92321828f5",
+            ImageId="ami-0c1a7f89451184c8b",
             MinCount=1,
             MaxCount=1,
             InstanceType="t2.micro",
-            KeyName="Amar-EC2-Service"
+            KeyName="Amar-EC2"
         )
     except Exception as e:
         logger.info(e)
